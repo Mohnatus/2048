@@ -4,8 +4,11 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+
+import { HomePage } from './home.page';
+import { RulesButton } from './rules/rules.button';
+
 
 @NgModule({
   imports: [
@@ -20,6 +23,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     ]),
     NgZorroAntdModule
   ],
-  declarations: [ HomePage ]
+  declarations: [ HomePage, RulesButton ]
 })
 export class HomePageModule {}
