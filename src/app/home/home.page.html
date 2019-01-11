@@ -1,12 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<nz-layout>
+  <nz-header class="header">
+    <nz-dropdown class="menu">
+      <a nz-dropdown class="menu__button">
+        Menu <i nz-icon type="down"></i>
+      </a>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://beta.ionicframework.com/docs/">docs</a> will be your guide.</p>
-</ion-content>
+      <ul nz-menu nzSelectable class="menu__list">
+        <li nz-menu-item (click)="startNewGame()">
+          New game
+        </li>
+        <li nz-menu-item (click)="showRules()">
+          Rules
+        </li>
+      </ul>
+    </nz-dropdown>
+
+    <div class="header__logo">
+      2048
+    </div>
+  </nz-header>
+  <nz-content>
+
+  </nz-content>
+</nz-layout>

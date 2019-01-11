@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
@@ -16,8 +17,9 @@ import { HomePage } from './home.page';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    NgZorroAntdModule
   ],
-  declarations: [HomePage]
+  declarations: [ HomePage ]
 })
 export class HomePageModule {}

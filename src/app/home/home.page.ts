@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  startNewGame(): void {
+    console.log('start new game');
+  }
+
+  showRules(): void {
+    console.log('show rules');
+  }
 }
