@@ -33,7 +33,8 @@ export class KeyboardInputManagerService {
     this.events[event].push(callback);
   }
 
-  emit(event, data) {
+  emit(event, data = {}) {
+    console.log('emit', data)
     var callbacks = this.events[event];
     if (callbacks) {
       callbacks.forEach(function (callback) {

@@ -1,17 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { GamePlayground } from './game/game.playground';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomePage {
   @ViewChild(GamePlayground)
   private playground: GamePlayground; 
 
-  startNewGame(): void {
-    this.playground.start();
+  restart(): void {
+    console.log('start')
+    this.playground.restart();
   }
 
   showRules(): void {

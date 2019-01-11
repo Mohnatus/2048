@@ -1,5 +1,3 @@
-var Math = window.Math;
-
 class Tile {
   x;
   y;
@@ -78,15 +76,15 @@ class Grid {
   }
 
   // Find the first available random position
-  randomAvailableCell() {
-    var cells = this.availableCells();
+  randomAvailableCell(): any[] {
+    var cells: any[] = this.availableCells();
 
     if (cells.length) {
       return cells[Math.floor(Math.random() * cells.length)];
     }
   };
 
-  availableCells():object {
+  availableCells(): any[] {
     var cells = [];
 
     this.eachCell(function (x, y, tile) {
@@ -162,10 +160,10 @@ class Grid {
 }
 
 export class GridService {
-  generateGrid(size, previousState = null):object {
+  generateGrid(size, previousState = null): Grid {
     return new Grid(size, previousState);
   }
-  generateTile(position, value):object {
+  generateTile(position, value): Tile {
     return new Tile(position, value);
   }
 }

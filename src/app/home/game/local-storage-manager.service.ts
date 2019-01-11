@@ -1,4 +1,4 @@
-window.fakeStorage = {
+var fakeStorage = {
   _data: {},
 
   setItem: function (id, val) {
@@ -25,7 +25,7 @@ export class LocalStorageManagerService {
 
   constructor() {
     var supported = this.localStorageSupported();
-    this.storage = supported ? window.localStorage : window.fakeStorage;
+    this.storage = supported ? window.localStorage : fakeStorage;
   }
 
   localStorageSupported() {

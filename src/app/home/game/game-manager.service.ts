@@ -26,8 +26,6 @@ export class GameManagerService {
     htmlManager : any, 
     storageManager: any
   ) {
-    this.Math = window.Math;
-
     this.size = size;
     this.inputManager = inputManager;
     this.htmlManager = htmlManager;
@@ -37,28 +35,26 @@ export class GameManagerService {
     this.inputManager.init();
 
     // subscribe on input events
-    this.inputManager.on("move", () => this.move());
+    this.inputManager.on("move", (data) => this.move(data));
     this.inputManager.on("restart", () => this.restart());
     this.inputManager.on("keepPlaying", () => this.keepPlaying());
-
-    console.log('game manager init', size, this.size);
 
     this.setup();
   }
 
   // настройка игры
   setup():void {
-    //var previousState = this.storageManager.getGameState();
-    var previousState = false;
+    var previousState = this.storageManager.getGameState();
+    
     // Reload the game from a previous game if present
     if (previousState) {
 
-      // this.grid        = this.grid.generateGrid(previousState.grid.size,
-      //                             previousState.grid.cells); 
-      // this.score       = previousState.score;
-      // this.over        = previousState.over;
-      // this.won         = previousState.won;
-      // this.keep = previousState.keepPlaying;
+      this.grid        = this.gridService.generateGrid(previousState.grid.size,
+                                  previousState.grid.cells); 
+      this.score       = previousState.score;
+      this.over        = previousState.over;
+      this.won         = previousState.won;
+      this.keep = previousState.keepPlaying;
 
     } else {
 
@@ -82,8 +78,8 @@ export class GameManagerService {
   // start new game
   restart():void {
     console.log('game manager restart');
-    //this.storageManager.clearGameState();
-    //this.htmlManager.continueGame(); // Clear the game won/lost message
+    this.storageManager.clearGameState();
+    this.htmlManager.continueGame(); // Clear the game won/lost message
     this.setup();
   }
 
@@ -119,7 +115,7 @@ export class GameManagerService {
   // Adds a tile in a random position
   addRandomTile():void {
     if (this.grid.cellsAvailable()) {
-      var value = this.Math.random() < 0.9 ? 2 : 4;
+      var value = Math.random() < 0.9 ? 2 : 4;
       var tile = this.gridService.generateTile(this.grid.randomAvailableCell(), value);
 
       this.grid.insertTile(tile);
@@ -144,8 +140,7 @@ export class GameManagerService {
   }
 
   // Move tiles on the grid in the specified direction
-  move():void {
-
+  move(direction):void {
     // 0: up, 
     // 1: right, 
     // 2: down, 
@@ -158,7 +153,9 @@ export class GameManagerService {
     var cell, tile;
 
     var vector     = this.getVector(direction);
+    console.log('move', vector, direction)
     var traversals = this.buildTraversals(vector);
+    
     var moved      = false;
 
     // Save the current tile positions and remove merger information
@@ -176,7 +173,7 @@ export class GameManagerService {
 
           // Only one merger per row traversal?
           if (next && next.value === tile.value && !next.mergedFrom) {
-            var merged = this.gridService.generateTile(positions.next, tile.value * 2);
+            var merged = self.gridService.generateTile(positions.next, tile.value * 2);
             merged.mergedFrom = [tile, next];
 
             self.grid.insertTile(merged);
@@ -245,11 +242,14 @@ export class GameManagerService {
       3: { x: -1, y: 0 }   // Left
     };
 
+    console.log('get vector', direction)
+
     return map[direction];
   };
 
   // Build a list of positions to traverse in the right order
   buildTraversals(vector) {
+    console.log('build traversals', vector)
     var traversals = { 
       x: [], 
       y: [] 
@@ -299,6 +299,7 @@ export class GameManagerService {
 
         if (tile) {
           for (var direction = 0; direction < 4; direction++) {
+            console.log('tile', direction)
             var vector = self.getVector(direction);
             var cell   = { x: x + vector.x, y: y + vector.y };
 

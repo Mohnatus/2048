@@ -1,4 +1,4 @@
-<nz-layout>
+<!-- <nz-layout>
   <nz-header class="header">
     <nz-dropdown class="menu">
       <a nz-dropdown class="menu__button">
@@ -22,4 +22,29 @@
   <nz-content>
     <game-playground></game-playground>
   </nz-content>
-</nz-layout>
+</nz-layout> -->
+
+<div class="container">
+  <div class="heading">
+    <nz-dropdown class="menu">
+      <a nz-dropdown class="menu-button">
+        Menu <i nz-icon type="down"></i>
+      </a>
+
+      <ul nz-menu nzSelectable class="menu__list">
+        <li nz-menu-item (click)="restart()">
+          New game
+        </li>
+        <li nz-menu-item>
+          <rules-button></rules-button>
+        </li>
+      </ul>
+    </nz-dropdown>
+
+    <h1 class="title">2048</h1>
+    
+  </div>
+
+
+  <game-playground></game-playground>
+</div>

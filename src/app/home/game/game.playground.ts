@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 import { GameManagerService } from './game-manager.service';
 import { KeyboardInputManagerService } from './keyboard-input-manager.service';
@@ -9,14 +9,14 @@ import { GridService } from './grid.service';
 @Component({
   selector: 'game-playground',
   templateUrl: 'game.playground.html',
-  styleUrls: ['game.playground.scss'],
   providers: [
     GameManagerService,
     KeyboardInputManagerService,
     HTMLActuatorService,
     LocalStorageManagerService,
     GridService
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class GamePlayground {
   size = 4;
@@ -30,17 +30,19 @@ export class GamePlayground {
   
 
   ngOnInit(): void {
-    console.log(this.size, 555)
     // Wait till the browser is ready to render the game (avoids glitches)
     window.requestAnimationFrame(() => {
-      console.log(this, this.size)
       this.gameManager.init(this.size, this.inputManager, this.htmlManager, this.storageManager);
     });
   }
 
-  start(): void {
-    console.log(this.size)
+  restart(): void {
+    console.log(123)
     this.gameManager.restart();
+  }
+
+  keepPlaying(): void {
+    this.gameManager.keepPlaying();
   }
 
   next(): void {
