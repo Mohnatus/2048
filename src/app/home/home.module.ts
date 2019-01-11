@@ -8,6 +8,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { HomePage } from './home.page';
 import { RulesButton } from './rules/rules.button';
+import { GamePlayground } from './game/game.playground';
 
 
 @NgModule({
@@ -23,6 +24,6 @@ import { RulesButton } from './rules/rules.button';
     ]),
     NgZorroAntdModule
   ],
-  declarations: [ HomePage, RulesButton ]
+  declarations: [ HomePage, RulesButton, GamePlayground ]
 })
 export class HomePageModule {}

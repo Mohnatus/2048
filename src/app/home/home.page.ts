@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { GamePlayground } from './game/game.playground';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  @ViewChild(GamePlayground)
+  private playground: GamePlayground; 
 
   startNewGame(): void {
-    console.log('start new game');
+    this.playground.start();
   }
 
   showRules(): void {
