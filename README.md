@@ -1,13 +1,14 @@
 # 2048
 
+## install pachages
 npm install
 
-# .apk file
+## create .apk file
 ionic cordova build android
 ionic cordova build android --prod --release
 
-# dev
+## dev
 ionic serve
 
-# emulate
+## emulate
 ionic cordova run android
