@@ -97,7 +97,6 @@ export class GamePlayground {
 
   // start new game
   restart():void {
-    console.log('restart')
     this.storageManager.clearGameState();
     this.htmlManager.continueGame(); // Clear the game won/lost message
     this.setup();
@@ -230,7 +229,6 @@ export class GamePlayground {
 
   // Keep playing after winning (allows going over 2048)
   keepPlaying():void {
-    console.log('keep')
     this.keep = true;
     this.htmlManager.continueGame(); // Clear the game won/lost message
   }
