@@ -6,8 +6,6 @@
 ## create .apk file
 `ionic cordova build android`
 
-`ionic cordova build android --prod --release`
-
 ## dev
 `ionic serve`
 
