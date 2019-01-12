@@ -15,7 +15,6 @@
 
 }
 
-
 .menu {
     font-size: 18px;
 
@@ -33,6 +32,16 @@
     }
 }
 
+.rules-modal {
+    &__title {
+        color: $text-color;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    &__button {
+        @include button;
+    }
+}
 
 @include smaller($mobile-threshold) {
     .header {
@@ -41,6 +50,3 @@
         }
     }
 }
-
-
-
