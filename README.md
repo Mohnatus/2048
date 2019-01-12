@@ -1,6 +1,6 @@
 # 2048
 
-## install pachages
+## install packages
 `npm install`
 
 ## create .apk file
