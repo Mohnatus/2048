@@ -93,17 +93,7 @@
   line-height: 42px;
 }
 
-@include keyframes(move-up) {
-  0% {
-    top: 25px;
-    opacity: 1;
-  }
 
-  100% {
-    top: -50px;
-    opacity: 0;
-  }
-}
 
 @include keyframes(fade-in) {
   0% {
@@ -138,5 +128,38 @@
 
   100% {
     @include transform(scale(1));
+  }
+}
+
+
+// Styles for buttons
+@mixin button {
+  display: inline-block;
+
+  height: 40px;
+  padding: 0 20px;
+
+  background: darken($game-container-background, 20%);
+  border-radius: 3px;
+  
+  line-height: 42px;
+  text-decoration: none;
+  color: $bright-text-color;
+
+  &:hover {
+    color: $tile-gold-color;
+  }
+}
+
+
+@include keyframes(move-up) {
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -50px;
+    opacity: 0;
   }
 }

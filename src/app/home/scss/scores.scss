@@ -1,0 +1,74 @@
+@keyframes move-up {
+    0% {
+        top: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        top: -100%;
+        opacity: 0;
+    }
+}
+
+.scores {
+    display: flex;
+    justify-content: flex-end;
+
+    &__item {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-block;
+
+        margin-top: 8px;
+        margin-left: 8px;
+        padding: 10px 15px;
+
+        background: $game-container-background;
+        color: white;
+        border-radius: 3px;
+        
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 1;
+        text-align: center;
+
+        &:before {
+            display: block;
+
+            text-transform: uppercase;
+            font-size: 13px;
+            text-align: center;
+            color: $tile-color;
+        }
+
+        .score-addition {
+            position: absolute;
+            z-index: 100;
+
+            left: 0;
+            right: 0;
+            top: 100%;
+
+            color: rgba($text-color, .9);
+
+            text-align: center;
+            
+            font-size: inherit;
+            font-weight: bold;
+
+            animation: move-up 600ms ease-in both;          
+        }
+    }
+
+    .score-container:before {
+        content: "Score";
+    }
+    
+    .best-container:before {
+        content: "Best";
+    }
+
+}
+
+
+  

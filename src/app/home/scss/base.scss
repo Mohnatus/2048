@@ -1,0 +1,52 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    background: $background-color;
+    color: $text-color;
+
+    font-family: $font;
+    font-size: 18px;
+}
+
+body {
+    padding: $body-padding;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.65;
+}
+
+a {
+    color: $text-color;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+strong {
+    &.important {
+        text-transform: uppercase;
+    }
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid lighten($text-color, 40%);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+  
+
+@include smaller($mobile-threshold) {
+    html, body {
+        font-size: 15px;
+    }
+
+    body {
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+}

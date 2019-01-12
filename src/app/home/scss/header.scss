@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    .title {
+        font-size: $title-font-size;
+        font-weight: bold;
+        margin: 0;
+        display: block;
+        color: inherit;
+    }
+
+}
+
+
+.menu {
+    font-size: 18px;
+
+    &__button {
+        @include button;
+        display: inline-block;
+        text-align: center;
+    }
+
+    &__list {
+        font-size: inherit;
+        font-weight: bold;
+        background-color: $tile-color;
+        color: $text-color;
+    }
+}
+
+
+@include smaller($mobile-threshold) {
+    .header {
+        .title {
+            font-size: $title-font-size-min;
+        }
+    }
+}
+
+
+
