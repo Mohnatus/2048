@@ -1,5 +1,7 @@
 {
   "name": "2048",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

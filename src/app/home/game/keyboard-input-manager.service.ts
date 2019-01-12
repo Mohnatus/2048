@@ -63,9 +63,9 @@ export class KeyboardInputManagerService {
 
     // Respond to direction keys
     document.addEventListener("keydown", function (event) {
-      var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
-                      event.shiftKey;
-      var mapped    = map[event.which];
+      var modifiers = (<any>event).altKey || (<any>event).ctrlKey || (<any>event).metaKey ||
+      (<any>event).shiftKey;
+      var mapped    = map[(<any>event).which];
 
       if (!modifiers) {
         if (mapped !== undefined) {
@@ -75,7 +75,7 @@ export class KeyboardInputManagerService {
       }
 
       // R key restarts the game
-      if (!modifiers && event.which === 82) {
+      if (!modifiers && (<any>event).which === 82) {
         self.restart.call(self, event);
       }
     });

@@ -1,8 +1,3 @@
 import { NgModule } from '@angular/core';
-
-import { GamePlayground } from './game.playground';
-
-@NgModule({
-  declarations: [ GamePlayground ]
-})
+@NgModule({})
 export class GameModule {}

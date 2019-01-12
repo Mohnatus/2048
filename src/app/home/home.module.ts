@@ -22,7 +22,7 @@ import { GamePlayground } from './game/game.playground';
         component: HomePage
       }
     ]),
-    NgZorroAntdModule
+    NgZorroAntdModule,
   ],
   declarations: [ HomePage, RulesButton, GamePlayground ]
 })
