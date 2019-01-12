@@ -69,15 +69,12 @@ export class GameManagerService {
 
     }
 
-    console.log('game-manager setup', this.grid)
-
     // Update the actuator
     this.actuate();
   }
 
   // start new game
   restart():void {
-    console.log('game manager restart');
     this.storageManager.clearGameState();
     this.htmlManager.continueGame(); // Clear the game won/lost message
     this.setup();
@@ -153,7 +150,6 @@ export class GameManagerService {
     var cell, tile;
 
     var vector     = this.getVector(direction);
-    console.log('move', vector, direction)
     var traversals = this.buildTraversals(vector);
     
     var moved      = false;
@@ -211,9 +207,8 @@ export class GameManagerService {
 
   // Keep playing after winning (allows going over 2048)
   keepPlaying():void {
-    console.log('game manager keep playing');
     this.keep = true;
-    //this.htmlManager.continueGame(); // Clear the game won/lost message
+    this.htmlManager.continueGame(); // Clear the game won/lost message
   }
 
   // Return true if the game is lost, or has won and the user hasn't kept playing
@@ -242,14 +237,11 @@ export class GameManagerService {
       3: { x: -1, y: 0 }   // Left
     };
 
-    console.log('get vector', direction)
-
     return map[direction];
   };
 
   // Build a list of positions to traverse in the right order
   buildTraversals(vector) {
-    console.log('build traversals', vector)
     var traversals = { 
       x: [], 
       y: [] 
@@ -299,7 +291,6 @@ export class GameManagerService {
 
         if (tile) {
           for (var direction = 0; direction < 4; direction++) {
-            console.log('tile', direction)
             var vector = self.getVector(direction);
             var cell   = { x: x + vector.x, y: y + vector.y };
 

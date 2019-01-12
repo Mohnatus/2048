@@ -37,7 +37,6 @@ export class GamePlayground {
   }
 
   restart(): void {
-    console.log(123)
     this.gameManager.restart();
   }
 

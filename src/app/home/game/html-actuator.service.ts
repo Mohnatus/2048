@@ -10,7 +10,6 @@ export class HTMLActuatorService {
     this.scoreContainer   = document.querySelector(".score-container");
     this.bestContainer    = document.querySelector(".best-container");
     this.messageContainer = document.querySelector(".game-message");
-    console.log('html', this.tileContainer, this.scoreContainer, this.bestContainer, this.messageContainer)
 
     this.score = 0;
   }

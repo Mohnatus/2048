@@ -12,11 +12,6 @@ export class HomePage {
   private playground: GamePlayground; 
 
   restart(): void {
-    console.log('start')
     this.playground.restart();
-  }
-
-  showRules(): void {
-    console.log('show rules');
   }
 }

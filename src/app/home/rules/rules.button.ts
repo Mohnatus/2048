@@ -9,12 +9,10 @@ export class RulesButton {
   isVisible = false;
 
   show(): void {
-    console.log('show rules modal');
     this.isVisible = true;
   }
 
   hide(): void {
-    console.log('hide rules modal');
     this.isVisible = false;
   }
 }

@@ -41,8 +41,6 @@ class Grid {
   constructor(size, previousState) {
     this.size = size;
     this.cells = previousState ? this.fromState(previousState) : this.empty();
-
-    console.log('new grid', this)
   }
 
   fromState(state: object): object {
