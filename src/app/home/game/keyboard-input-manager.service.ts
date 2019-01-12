@@ -21,7 +21,7 @@ export class KeyboardInputManagerService {
   }
 
   init() {
-    this.gameContainer = document.getElementsByClassName("game-container")[0];
+    this.gameContainer = document.getElementsByClassName("game-field")[0];
 
     this.listen();
   }
@@ -34,7 +34,6 @@ export class KeyboardInputManagerService {
   }
 
   emit(event, data = {}) {
-    console.log('emit', data)
     var callbacks = this.events[event];
     if (callbacks) {
       callbacks.forEach(function (callback) {

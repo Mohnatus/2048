@@ -15,7 +15,6 @@
 
 }
 
-
 .menu {
     font-size: 18px;
 
@@ -26,13 +25,33 @@
     }
 
     &__list {
-        font-size: inherit;
-        font-weight: bold;
         background-color: $tile-color;
+        padding: 10px 0;
+    }
+
+    &__item {
+        font-weight: bold;
+        font-size: 15px;
         color: $text-color;
+        padding: 12px 18px;
+
+        &:hover {
+            background-color: darken($game-container-background, 20%);
+            color: white;
+        }
     }
 }
 
+.rules-modal {
+    &__title {
+        color: $text-color;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    &__button {
+        @include button;
+    }
+}
 
 @include smaller($mobile-threshold) {
     .header {
@@ -41,6 +60,3 @@
         }
     }
 }
-
-
-

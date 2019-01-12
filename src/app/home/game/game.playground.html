@@ -5,45 +5,51 @@
     <div class="scores__item best-container">0</div>
   </div>
  
+  <div class="game">
+    <div class="game-container">
 
-  <div class="game-container">
+        <div class="game-message">
+          <p></p>
+          <div class="lower">
+            <button nz-button class="keep-playing-button" (click)="keepPlaying()">KEEP PLAYING</button>
+            <button nz-button class="retry-button" (click)="restart()">TRY AGAIN</button>
+          </div>
+        </div>
+  
+        <div class="game-field">
+            <div class="grid-container">
+                <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                  <div class="grid-cell"></div>
+                </div>
+              </div>
+        
+              <div class="tile-container"></div>
 
-    <div class="game-message">
-      <p></p>
-      <div class="lower">
-        <a class="keep-playing-button" (click)="keepPlaying()"></a>
-        <a class="retry-button" (click)="restart()">Try again</a>
-      </div>
+        </div>
+          
+  
     </div>
-
-    <div class="grid-container">
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-    </div>
-
-    <div class="tile-container"></div>
-
   </div>
+  
 </div>

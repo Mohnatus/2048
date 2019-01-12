@@ -2,9 +2,12 @@
   <div (click)="show()">
     RULES
   </div>
-  <nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter" (nzOnCancel)="hide()">
+  <nz-modal [(nzVisible)]="isVisible" class="rules-modal"
+    [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter" 
+    [nzStyle]="{ top: '10px' }"
+    (nzOnCancel)="hide()">
     <ng-template #modalTitle>
-      Правила игры 2048
+      <h2 class="rules-modal__title">Правила игры 2048</h2>
     </ng-template>
 
     <ng-template #modalContent>
@@ -16,7 +19,7 @@
     </ng-template>
 
     <ng-template #modalFooter>
-      <button nz-button nzType="primary" (click)="hide()">Back to game</button>
+      <button nz-button class="rules-modal__button" (click)="hide()">Back to game</button>
     </ng-template>
   </nz-modal>
 </div>
