@@ -1,4 +1,7 @@
-# 2048
+# Игра 2048
+
+Тестовое задание для Ligeria Games.
+Cordova + Ionic
 
 ## install packages
 `npm install`
